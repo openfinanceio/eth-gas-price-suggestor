@@ -1,3 +1,5 @@
+throw new Error(`Library not yet written`);
+/*
 const BN = require('bn.js')
 const Eth = require('ethjs');
 
@@ -76,4 +78,4 @@ class Suggestor {
 }
 
 module.exports = Suggestor
-
+*/

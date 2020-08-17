@@ -1,34 +1,50 @@
 {
-  "name": "eth-gas-price-suggestor",
-  "version": "1.0.2",
-  "description": "A module for suggesting a reasonable successful ethereum gas price.",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/flyswatter/eth-gas-price-suggestor.git"
-  },
+  "name": "@openfinanceio/eth-gas-price-suggestor",
+  "description": "A fork and total rewrite of MetaMask/eth-gas-price-suggestor - uses historic transaction costs to estimate reasonable gas prices",
+  "version": "2.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": "https://github.com/openfinanceio/eth-gas-price-suggestor",
   "keywords": [
     "ethereum",
     "gas",
     "price"
   ],
-  "author": "Dan Finlay <dan@danfinlay.com>",
+  "author": "Kael Shipman<kael.shipman@openfinance.io>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flyswatter/eth-gas-price-suggestor/issues"
+    "url": "https://github.com/openfinanceio/eth-gas-price-suggestor/issues"
   },
-  "homepage": "https://github.com/flyswatter/eth-gas-price-suggestor#readme",
+  "homepage": "https://github.com/openfinanceio/eth-gas-price-suggestor#readme",
   "devDependencies": {
-    "eth-block-tracker": "^2.0.1",
-    "ethereumjs-testrpc": "^3.0.5",
-    "ethjs-query": "^0.2.6",
-    "tape": "^4.6.3"
+    "@types/jest": "^24.0.17",
+    "@types/node": "^8.10.62",
+    "husky": "^1.3.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.16.0",
+    "pretty-quick": "^1.10.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.9.6"
   },
   "dependencies": {
     "bn.js": "^4.11.7",
     "ethjs": "^0.2.7"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "es5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   }
 }
